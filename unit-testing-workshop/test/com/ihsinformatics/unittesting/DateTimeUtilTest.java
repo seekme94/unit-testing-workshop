@@ -160,17 +160,6 @@ public class DateTimeUtilTest {
 	 * {@link com.ihsinformatics.unittesting.DateTimeUtil#detectDateFormat(java.lang.String)}.
 	 */
 	@Test
-	public void shouldNotDetectSQLDateFormat() {
-		String dateString = "14/08/1947 01:00";
-		String detectedFormat = DateTimeUtil.detectDateFormat(dateString);
-		assertNotSame(detectedFormat, sqlFormat);
-	}
-
-	/**
-	 * Test method for
-	 * {@link com.ihsinformatics.unittesting.DateTimeUtil#detectDateFormat(java.lang.String)}.
-	 */
-	@Test
 	public void shouldNotDetectClientDateFormat() {
 		String dateString = "1947-08-14 01:00:00";
 		String detectedFormat = DateTimeUtil.detectDateFormat(dateString);

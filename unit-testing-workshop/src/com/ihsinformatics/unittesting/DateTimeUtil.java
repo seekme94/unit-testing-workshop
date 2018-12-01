@@ -34,7 +34,7 @@ public class DateTimeUtil {
 	public static final String ISO8601_FULL = "yyyy-MM-dd'T'HH:mm:ss.'Z'"; // 1970-01-01T00:00:00.000+0000
 
 	private static final Map<String, String> DATE_FORMATS;
-	
+
 	static {
 		DATE_FORMATS = new HashMap<>();
 		// Time only
@@ -66,8 +66,24 @@ public class DateTimeUtil {
 		// ISO8601
 		DATE_FORMATS.put("^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{2}:\\d{2}\\.\\d{2,4}$", "yyyy-MM-dd HH:mm:ss.'Z'");
 	}
-	
+
 	private DateTimeUtil() {
+	}
+
+	public static void main(String[] args) {
+		String clientFormat = "dd/MM/yyyy HH:mm";
+		// Test conversion from string into date
+		Date date = DateTimeUtil.fromString("01/01/2018 16:55", clientFormat);
+		if (date.getYear() + 1900 == 2018 && date.getMonth() == 0 && date.getDate() == 1 && date.getHours() == 16
+				&& date.getMinutes() == 55 && date.getSeconds() == 0) {
+			System.out.println("Conversion to client format OK!");
+		} else {
+			System.out.println("Failed to conversion to client format!");
+		}
+		// Test ambiguous date/month case
+		Date date1 = DateTimeUtil.fromString("12/05/2018 00:00", clientFormat);
+		Date date2 = DateTimeUtil.fromString("05/12/2018 00:00", clientFormat);
+		System.out.println(date1.before(date2) ? "Ambiguity handled well!" : "Ambiguity check failed.");
 	}
 
 	public static Date fromString(String string, String format) {
