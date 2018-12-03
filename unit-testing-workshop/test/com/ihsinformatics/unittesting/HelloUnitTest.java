@@ -63,7 +63,7 @@ public class HelloUnitTest {
 		Double.parseDouble(null);
 	}
 
-	@Test(timeout = 2000)
+	@Test(timeout = 20000)
 	public void shouldNotTakeMoreThanTwoSeconds() {
 		for (int i = 0; i < 10000000; i++) {
 			BigInteger bigInteger = new BigInteger(String.valueOf(i));
