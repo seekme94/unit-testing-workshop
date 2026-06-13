@@ -29,6 +29,10 @@ replay_pid*
 /out/
 /build/
 
+# Python
+__pycache__/
+*.pyc
+
 # IntelliJ IDEA
 .idea/
 *.iml
