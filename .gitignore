@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.TemporaryItems
+.fseventsd
+.DocumentRevisions-V100
+.VolumeIcon.icns
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.log
+*.jfr
+hs_err_pid*
+replay_pid*
+*.class
+*.ctxt
+*.orig
+*.rej
+*.swp
+/target/
+/out/
+/build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+/out/
+
+# VSCode
+.vscode/
+*.code-workspace
+unit-testing-workshop/.project
